@@ -9,9 +9,9 @@ public class TraineeDemo {
 		// TODO Auto-generated method stub
 		Trainee t1=new Trainee(25,"John",100,12);
 		Trainee t2=new Trainee(23,"Jack",110,1);
-		Trainee t3=new Trainee(20,"david",101,3);
-		Trainee t4=new Trainee(22,"eric",103,20);
-		Trainee t5=new Trainee(21,"henry",200,30);
+		Trainee t3=new Trainee(20,"David",101,3);
+		Trainee t4=new Trainee(22,"Eric",103,20);
+		Trainee t5=new Trainee(21,"Henry",200,30);
 		
 		ArrayList<Trainee> arl=new ArrayList<Trainee>();
 		arl.add(t1);
@@ -40,6 +40,13 @@ public class TraineeDemo {
 		
 		for(Trainee t:arl) {
 			System.out.println(t.getRank()+" , "+t.getName());
+		}
+		System.out.println("Sort according to name");
+
+		Collections.sort(arl,new SortByNameDemo());
+		
+		for(Trainee t:arl) {
+			System.out.println(t.getName()+" , "+t.getRank());
 		}
 	}
 
