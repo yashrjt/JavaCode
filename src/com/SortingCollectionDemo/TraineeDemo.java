@@ -20,6 +20,7 @@ public class TraineeDemo {
 		arl.add(t4);
 		arl.add(t5);
 
+		
 		Collections.sort(arl);
 		
 		for(Trainee t:arl) {

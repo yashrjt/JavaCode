@@ -12,6 +12,30 @@ public class Trainee implements Comparable<Trainee> {
 	}
 
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + rollno;
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Trainee other = (Trainee) obj;
+		if (rollno != other.rollno)
+			return false;
+		return true;
+	}
+
+
 	public Trainee(int age, String name, int rollno, int rank) {
 		super();
 		this.age = age;

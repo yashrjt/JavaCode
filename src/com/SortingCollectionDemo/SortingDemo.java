@@ -2,6 +2,7 @@ package com.SortingCollectionDemo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class SortingDemo {
 
@@ -14,8 +15,14 @@ public class SortingDemo {
 		al.add("chicago");
 		al.add("dallas");
 		
-		Collections.sort(al);
-		System.out.println(al);
+		
+		Collections.synchronizedList(al);
+	
+		Iterator i=al.iterator();
+		while(i.hasNext()) {
+			System.out.println(i.next());
+			al.add("california");
+		}
 		
 	}
 

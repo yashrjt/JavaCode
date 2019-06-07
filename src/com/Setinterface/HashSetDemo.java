@@ -1,5 +1,6 @@
 package com.Setinterface;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.TreeSet;
@@ -20,7 +21,7 @@ public class HashSetDemo {
 //		hs.add(null);
 //		hs.add(null);
 		System.out.println(hs);
-		
+		Collections.synchronizedSet(hs);
 		
 		LinkedHashSet<String> lhs=new LinkedHashSet<String>();
 		lhs.add("Java");

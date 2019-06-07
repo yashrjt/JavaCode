@@ -1,5 +1,6 @@
 package com.mapInterfaceDemo;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -60,6 +61,9 @@ public class MapDemo {
 		hm.put(1231,null);
 		hm.put(8765,null);
 		
+		//synchronizes the hashmap object
+		Collections.synchronizedMap(hm);
+		
 		System.out.println("------------");
 		System.out.println("Hashmap");
 		for(Map.Entry<Integer,String> item: hm.entrySet()) {
@@ -74,6 +78,9 @@ public class MapDemo {
 		tm.put(2,"yui");
 		tm.put(8,"iop");
 		tm.put(12,null);
+		
+		
+		System.out.println("value of key 8 is "+tm.get(8));
 		System.out.println("------------");
 		System.out.println("Treemap");
 		for(Map.Entry<Integer,String> item: tm.entrySet()) {
