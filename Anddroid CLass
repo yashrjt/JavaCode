@@ -1,0 +1,326 @@
+Core Java
+
+JDK--Java dev kit(Development tools+JRE(execute))
+
+develop and run java code
+
+JRE--Java runtime environment test.java ---> compile --->test.class
+
+JVM--java virtual machine
+---executes code line by line,intrepreter
+
+
+Data types
+
+byte-----128 to 127
+float
+int
+long
+double
+short----32..... to 32....
+char
+boolean
+String
+Arrays
+
+
+
+
+Class
+
+Object
+
+
+Constructors---default constructor(which compiler craetes)
+---no -arg constructor(no arguments )
+---parameterized constructor()
+
+Constructor overloading
+Constructor chaining
+
+this keyword
+super keyword
+
+Default constructor will not be created by compiler if you create parameterized constructor...
+
+
+OOPS concepts
+
+Inheritance---IS A relationship
+
+Single level,Multilevel,Multiple (not supported in java  (classes))
+
+
+Aggregation --has-a relationship
+
+Polymorphism
+
+---Run time/dynamic 
+--compile time/static polymorphism/static binding
+
+
+Encapsulation/data hiding
+
+Main method
+
+---- main method is made static
+
+
+
+Keyword static:
+
+
+static belongs to class level,rather than object
+class,variable,method,block
+static variable/non-static variable
+Static methods(does not require object to get it called) vs non static methods
+
+
+Method Overloading--either parameter list/paramter types has to be diff
+Method overriding---same arguments list ,access modifiers cannot be restrictive comapred to basec class
+
+
+Abstract class ---has abstract methods,non abstract methods//no instance 
+Concrete class---has only non abstract methids(concrete methods)
+
+
+Abstract Class vs
+ Interface
+variables--- public static final 
+methods--public abstract
+
+
+Packages---packages created by devloper,built in packages
+import java.util.Scanner;
+
+
+
+access modifiers---
+public,
+protected,
+default,
+private
+
+
+Object class--root class for all the other classes
+import java.lang.*;
+
+toString()
+getclass()
+hashcode()
+equals()
+finalize()
+notify()
+clone
+
+
+String class--immutable
+
+string literals,(interning)
+string objects
+
+== vs equals 
+
+String buffer --mutable
+
+
+
+Exception handling
+
+checked ,unchecked exception
+try,catch,finally,throw,throws
+
+Garbage Collerection
+
+request jvm to do garbage collection
+System.gc()
+
+
+final vs finally vs finalize
+
+
+
+Collection Framework---consists of interfaces(collection i/f,map i/f) and classes(Collections)
+--intro
+
+Wrapper classes---convert primitive datatype to objects
+
+char-Character
+byte-Byte
+short-Short
+inty-Integer
+float-Float
+
+Autoboxing--/Autoboxing--converts primitives to objects
+Unboxing--converts objects to primitives
+
+
+
+Looping thru collection
+for loop
+Iterator,listiterator
+
+
+List interface--allows duplicate elements
+
+ArrayList,Linkedlist,Vector classes
+
+
+arrays have fixed length,making it hard to add/remove elements in future,homogenous
+
+ArrayList---
+Can increase by 50% of current size/half of its size
+heterogenous
+search operation is better
+non-synchronized so increased perfomance compared to vector
+
+Linkedlist
+addition and removal operations perform better
+
+
+Vector
+doubles it size
+Legacy class(1.1 version)
+synchronized class(multithreaded env)
+
+
+Set--no duplicates
+
+HashSet
+--backedup hashtable data structure
+--does not maintain insertion order
+--only one null element allowed
+--hashcode() ,equals()  to compare elements in order to eliminate duplicates
+-better performance compared to treeset O(1)
+
+
+hs.add(10);
+hs.add(20);
+hs.add(10);
+
+hashmap.put(10,"PRESENT");
+hashmap.put(20,"PRESENT");
+hashmap.put(10,"PRESENT");
+
+LinkedHashSet
+--backedup hashtable+linked list data structure
+--maintains insertion order
+--only one null element allowed
+--hashcode() ,equals()  to compare elements in order to eliminate duplicates
+
+
+Treeset
+
+---binary search tree structure
+---it comes with sorted order(ascending)
+-- null element not allowed
+--compare()  comapreTo() to compare elements
+--O(log n ) performance wise
+
+Maps
+
+
+Iterate map elements
+
+1.entryset
+2.keyset
+3.values
+
+HashTable
+---synchronized,legacy class
+---does not maintain insertion order
+---null keys and values are not allowed
+
+
+
+HashMap
+2*n---2*4==16
+-Default capacity 16
+--not synchronized
+---does not maintain insertion order
+--only one null key allowed ,any number of null values allowed
+
+
+LinkedHashMap
+--not synchronized
+--- maintain insertion order
+--only one null key allowed ,any number of null values allowed
+
+
+TreeMap
+--not synchronized
+--red black tree
+---sorted acc to key in natural order
+---null key not allowed ,null values allowed
+
+
+Collection framework--collection i/f,collections class
+
+Collections.sort()
+
+Comparable i/f
+--- natural sorting order
+---sort acc to single sequece 
+---the class properties which needs to get sorted has to implement this interface
+---comapreTo() method
+---java.lang package
+
+Comparator i/f
+---custom sorting order and also multiple sequence
+---java.util package
+
+
+Buckets concept
+
+When to override hashcode() and equals()?
+--Hashset,HashMap (your own claSSES like Employee,Student,Trainee)
+
+contract b/w  hashcode() and equals()
+
+when two objects have same hashcode then may /may not be equal
+when two objects are equal ,then they have same hashcode
+
+Hashmap working principle
+hm.put(key,value);
+hm.get(key);
+
+
+Collections.synchronizedMap();
+Collections.synchronizedList();
+Collections.synchronizedSet();
+Vector,Hashtable
+
+It gets lock on object level
+
+
+Concurrent Collections
+
+It gets lock on bucket level
+
+ConcurrentHashmap
+CopyOnWriteArrayList
+CopyOnWriteArraySet
+
+
+Fail fast iterators 
+throws concurrentmodification exception
+
+
+ fail safe iterators
+does not throws concurrentmodification exception
+
+
+
+Queue I/f
+--PriorityQueue class
+By default has natural sorting order
+Allows you to set your own priority 
+For custom priority use Comapartor i/f and write the logic
+--null elements
+
+
+Dequeue i/f
+ArrayDequeue class---add/removes elements from both head and tail
+
+
+
